@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Calendar from '@/components/Calendar'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,7 +24,7 @@ export default function RootLayout({
       
       <Navbar/>
       {children}
-      <Calendar/>
+      
       <Footer/>
       </body>
     </html>
@@ -32,4 +32,5 @@ export default function RootLayout({
 }
 
 
-//lama 11:28
+//lama 20:20
+//джош 7:54
