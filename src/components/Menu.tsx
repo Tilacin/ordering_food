@@ -3,23 +3,21 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-//import CartIcon from "./CartIcon";
+import CartIcon from "./CartIcon";
 
 const links = [
-  { id: 1, title: "Homepage", url: "/" },
-  { id: 2, title: "Menu", url: "/menu" },
-  { id: 3, title: "Working Hours", url: "/" },
-  { id: 4, title: "Contact", url: "/" },
+  { id: 1, title: "Главная", url: "/" },
+  { id: 2, title: "Меню", url: "/product/1" },
+  { id: 3, title: "Заказы", url: "/orders" },
+  //{ id: 4, title: "Авторизация", url: "/login" },
 ];
 
-function Menu () {
+function Menu() {
   const [open, setOpen] = useState(false);
 
-  
   const user = false;
   return (
     <div>
-     
       <Image
         src={open ? "/close.png" : "/open.png"}
         alt=""
@@ -36,20 +34,19 @@ function Menu () {
             </Link>
           ))}
 
-         
           <Link
-            href={user ? "/orders" : "login"}
+            href={user ? "/orders" : "/login"}
             onClick={() => setOpen(false)}
           >
-            {user ? "Orders" : "Login"}
+            {user ? "Orders" : "авторизация"}
           </Link>
           <Link href="/cart" onClick={() => setOpen(false)}>
-            {/* <CartIcon /> */}
+            <CartIcon/>
           </Link>
         </div>
       )}
     </div>
   );
-};
+}
 
 export default Menu;
