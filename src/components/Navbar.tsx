@@ -7,7 +7,7 @@ function Navbar() {
   const user = false;
 
   return (
-    <div className="h-12 text-red-500 p-4 flex items-center justify-between border-b-2 border-b-red-500 uppercase bg-orange-100 md:h-24 xl:px-20 lg:px-20">
+    <div className="h-12 text-red-500 p-4 flex items-center justify-between border-b-2 border-b-red-500 uppercase bg-orange-100 md:h-16 xl:px-20 lg:px-20">
       <div className="hidden md:flex gap-4 flex-1">
         <Link href="/">Главная</Link>
         <Link href="/product/1">Меню</Link>
