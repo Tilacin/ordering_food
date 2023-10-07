@@ -7,8 +7,8 @@ import CartIcon from "./CartIcon";
 
 const links = [
   { id: 1, title: "Главная", url: "/" },
-  { id: 2, title: "Меню", url: "/product/1" },
-  { id: 3, title: "Заказы", url: "/orders" },
+  { id: 2, title: "Меню", url: "/menu" },
+  { id: 3, title: "Меню теней", url: "/shadow" },
   //{ id: 4, title: "Авторизация", url: "/login" },
 ];
 
@@ -41,7 +41,7 @@ function Menu() {
             {user ? "Orders" : "авторизация"}
           </Link>
           <Link href="/cart" onClick={() => setOpen(false)}>
-            <CartIcon/>
+            <CartIcon />
           </Link>
         </div>
       )}
