@@ -4,400 +4,292 @@ type Product = {
   desc?: string;
   img?: string;
   price: number;
-  options?: { title: string; additionalPrice: number }[];
+  category: string;
 };
 
 type Products = Product[];
 
-export const featuredProducts: Products = [
+// firstCourse second drink  dessert
+
+export const products: Products = [
   {
     id: 1,
-    title: "Sicilian",
-    desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
-    img: "/temporary/p1.png",
+    title: "Вафельное печенье",
+    desc: "Вафельное печенье - это кондитерское изделие, которое готовится из вафельного теста. Оно может быть покрыто шоколадом, орехами или другими начинками.",
+    img: "/dishes/dessert1.jpg",
     price: 24.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    category: "desserts",
   },
   {
     id: 2,
-    title: "Bacon Deluxe",
-    desc: "Indulge in smoky goodness with a flame-grilled beef patty, topped with crispy bacon, melted cheddar cheese, caramelized onions, and a smattering of tangy BBQ sauce.",
-    img: "/temporary/p2.png",
-    price: 29.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Малиновый мусс",
+    desc: "Малиновый мусс - это десерт, приготовленный из свежей малины, сахара и желатина. Он имеет нежную, воздушную текстуру и приятный вкус.",
+    img: "/dishes/dessert2.jpg",
+    price: 22,
+    category: "desserts",
   },
   {
     id: 3,
-    title: "Bella Napoli",
-    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p3.png",
-    price: 24.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Йогуртовый торт",
+    desc: "Йогуртовый торт с фруктами - это нежный и легкий десерт, состоящий из бисквитных коржей, пропитанных йогуртовым кремом и украшенных свежими фруктами.",
+    img: "/dishes/dessert3.jpg",
+    price: 17,
+    category: "desserts",
   },
   {
     id: 4,
-    title: "Spicy Arrabbiata",
-    desc: "Ignite your taste buds with this fiery pasta creation, combining penne in a spicy tomato sauce infused with garlic, red chili flakes, and fresh basil for the ultimate comfort food experience.",
-    img: "/temporary/p4.png",
-    price: 26.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Безе",
+    desc: "Безе - это легкое и воздушное пирожное, приготовленное из яичных белков и сахара. Оно имеет хрустящую текстуру и нежный вкус.",
+    img: "/dishes/dessert4.jpg",
+    price: 15.7,
+    category: "desserts",
   },
   {
     id: 5,
-    title: "Jalapeño Fiesta",
-    desc: "Ignite your taste buds with a fiery kick! This burger features a succulent beef patty, fiery jalapeños, pepper jack cheese, and a zesty chipotle mayo sauce , and all the classic fixings on a toasted bun.",
-    img: "/temporary/p5.png",
-    price: 29.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Персиковый пирог",
+    desc: "Персиковый пирог - это вкусный и ароматный десерт, который готовится из песочного теста и начинки из свежих персиков. Он может быть как открытым, так и закрытым, с добавлением различных специй и топпингов.",
+    img: "/dishes/dessert5.jpg",
+    price: 11.3,
+    category: "desserts",
   },
   {
     id: 6,
-    title: "Margherita Magic",
-    desc: "A timeless favorite with a twist, showcasing a thin crust topped with sweet tomatoes, fresh basil, creamy mozzarella, and a drizzle of extra virgin olive oil, fresh arugula, and a drizzle of balsamic glaze.",
-    img: "/temporary/p6.png",
-    price: 24.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Мороженое с фруктами",
+    desc: "Мороженое с фруктами - это сладкий десерт, который состоит из шариков мороженого и свежих фруктов. ",
+    img: "/dishes/dessert6.jpg",
+    price: 17.2,
+    category: "desserts",
   },
   {
     id: 7,
-    title: "Garlic Parmesan Linguine",
-    desc: "A garlic lover's delight, featuring linguine smothered in a creamy Parmesan sauce, infused with garlic and garnished with chopped parsley, bell peppers, and cherry tomatoes.",
-    img: "/temporary/p7.png",
-    price: 28.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Шоколадный торт",
+    desc: "Шоколадный торт - это один из самых популярных десертов, который готовится с использованием темного или молочного шоколада.",
+    img: "/dishes/dessert7.jpg",
+    price: 21.2,
+    category: "desserts",
   },
   {
     id: 8,
-    title: "Mediterranean Delight",
-    desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/p8.png",
-    price: 32.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Клубничный чизкейк",
+    desc: "Клубничный чизкейк - это вкусный десерт, который сочетает в себе нежность сливочного сыра и сладость свежей клубники.",
+    img: "/dishes/dessert8.jpg",
+    price: 9.4,
+    category: "desserts",
   },
   {
     id: 9,
-    title: "Hawaiian Teriyaki",
-    desc: "Experience a taste of the tropics with a juicy beef patty glazed in tangy teriyaki sauce, topped with grilled pineapple, crispy bacon, and fresh lettuce, and all the classic fixings on a toasted bun.",
-    img: "/temporary/p9.png",
-    price: 29.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
-  },
-];
-
-
-
-
-export const pizzas: Products = [
-  {
-    id: 1,
-    title: "Sicilian",
-    desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
-    img: "/temporary/p1.png",
-    price: 24.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    title: "Макиато",
+    desc: "Макиато - Кофейный напиток, изготавливаемый путем добавления к эспрессо минимального количества молока, обычно взбитого.",
+    img: "/dishes/drink1.jpg",
+    price: 4.9,
+    category: "drinks",
   },
   {
-    id: 2,
-    title: "Mediterranean Delight",
-    desc: "Embark on a culinary journey with this Mediterranean-inspired creation, featuring zesty feta cheese, Kalamata olives, sun-dried tomatoes, and a sprinkle of oregano.",
-    img: "/temporary/p8.png",
-    price: 32.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    id: 10,
+    title: "Кофе",
+    desc: "Кофе - это напиток, который получают из зерен кофейного дерева, свежемолотый сваренный в турке",
+    img: "/dishes/drink2.jpg",
+    price: 5.9,
+    category: "drinks",
   },
   {
-    id: 3,
-    title: "Bella Napoli",
-    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p3.png",
-    price: 26.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    id: 11,
+    title: "Апельсиновый сок",
+    desc: "Апельсиновый сок - Апельсиновый сок - это популярный и освежающий напиток, который получают путем отжима апельсинов. Он богат витаминами и минералами, такими как витамин C.",
+    img: "/dishes/drink3.jpg",
+    price: 5.9,
+    category: "drinks",
   },
   {
-    id: 4,
-    title: "Pesto Primavera",
-    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p10.png",
-    price: 28.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    id: 12,
+    title: "Томатный сок",
+    desc: "Томатный сок - это полезный и освежающий напиток, получаемый из помидоров. Он содержит много витаминов, минералов и антиоксидантов, которые помогают поддерживать здоровье",
+    img: "/dishes/drink4.jpg",
+    price: 7,
+    category: "drinks",
   },
   {
-    id: 5,
-    title: "Veggie Supreme",
-    desc: "A classic Italian delight featuring a thin, crispy crust, tangy tomato sauce, fresh mozzarella, and a medley of aromatic herbs topped with lettuce, tomatoes, and a dollop of tangy mayo.",
-    img: "/temporary/p11.png",
-    price: 24.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    id: 13,
+    title: "Чёрный чай",
+    desc: "Чёрный чай - это один из самых популярных видов чая в мире. Он имеет глубокий, насыщенный вкус и аромат, а также обладает множеством полезных свойств. Чёрный чай производится из листьев Camellia sinensis.",
+    img: "/dishes/drink5.jpg",
+    price: 2,
+    category: "drinks",
   },
   {
-    id: 6,
-    title: "Four Cheese Fantasy",
-    desc: "Experience pure cheesy bliss with a melty blend of mozzarella, cheddar, provolone, and Parmesan cheeses, creating a rich and indulgent pizza experience.",
-    img: "/temporary/p12.png",
-    price: 22.9,
-    options: [
-      {
-        title: "Small",
-        additionalPrice: 0,
-      },
-      {
-        title: "Medium",
-        additionalPrice: 4,
-      },
-      {
-        title: "Large",
-        additionalPrice: 6,
-      },
-    ],
+    id: 14,
+    title: "Вода с лимоном",
+    desc: "Вода с лимоном -это освежающий и полезный напиток,  не только утоляет жажду, но и помогает улучшить пищеварение, очистить организм от токсинов и укрепить иммунитет. ",
+    img: "/dishes/drink6.jpg",
+    price: 2,
+    category:"drinks",
   },
+  {
+    id: 15,
+    title: "Рамен",
+    desc: "Рамен - это густой японский суп с лапшой и различными добавками. Основные ингредиенты включают бульон даши, лапшу, соленья, яйца, овощи, мясо или морепродукты.",
+    img: "/dishes/first1.jpg",
+    price: 9,
+    category: "first_dishes",
+  },
+  {
+    id: 16,
+    title: "Японская лапша",
+    desc: "Японская лапша - густое, ароматное блюдо с разнообразными добавками",
+    img: "/dishes/first2.jpg",
+    price: 7.5,
+    category: "first_dishes",
+  },
+  {
+    id: 17,
+    title: "Оден",
+    desc: "Оден - японское блюдо из бульона, овощей и мяса, которые варятся вместе в течение длительного времени.",
+    img: "/dishes/first3.jpg",
+    price: 7.5,
+    category: "first_dishes",
+  },
+  {
+    id: 18,
+    title: "Мисо",
+    desc: "Мисо - это суп из морепродуктов в японской кухне , который готовится на основе пасты мисо и содержит морепродукты, такие как рыба или креветки.",
+    img: "/dishes/first4.jpg",
+    price: 15,
+    category: "first_dishes",
+  },
+  {
+    id: 19,
+    title: "Мисо-2",
+    desc: "Мисо - это суп из морепродуктов в японской кухне , который готовится на основе пасты мисо и содержит морепродукты, такие как рыба или креветки.",
+    img: "/dishes/first5.jpg",
+    price: 15,
+    category:"first_dishes",
+  },
+  {
+    id: 20,
+    title: "Борщ",
+    desc: "Борщ - это блюдо, которое состоит из свеклы, капусты, моркови, картофеля и других овощей. Он также может содержать мясо, такое как говядина или свинина.",
+    img: "/dishes/first6.jpg",
+    price: 9.9,
+    category: "first_dishes",
+  },
+  {
+    id: 21,
+    title: "Картошка с яйцом",
+    desc: "Жареная картошка с яйцом - это блюдо, приготовленное из картофеля, который обжаривается до хрустящей золотистой корочки, а затем добавляется яйцо. ",
+    img: "/dishes/second1.jpg",
+    price: 11.9,
+    category: "second_dishes",
+  },
+  {
+    id: 22,
+    title: "Омурайсу",
+    desc: "Омурайсу - Популярное японское блюдо, состоящее из жареного риса, покрытого или завернутого в омлет, и украшенное кетчупом.",
+    img: "/dishes/second2.jpg",
+    price: 14.9,
+    category:"second_dishes",
+  },
+  {
+    id: 23,
+    title: "Спагетти",
+    desc: "Спагетти - спагетти со специальной фирменной пастой с добавлением грибов, лука, моркови, сельдерея, бекона, чеснока, помидоров ",
+    img: "/dishes/second3.jpg",
+    price: 11,
+    category: "second_dishes",
+  },
+  {
+    id: 24,
+    title: "Мясо жаренное",
+    desc: "Мясо жаренное- это блюдо, состоящее из большого куска мяса, который обжаривается на сковороде или гриле до хрустящей корочки и внутренней мягкости. ",
+    img: "/dishes/second4.jpg",
+    price: 22,
+    category: "second_dishes",
+  },
+  {
+    id:25,
+    title: "Жаренные пельмени",
+    desc: "Жаренные пельмени - обжариваются на сковороде до золотистой корочки. Затем они подаются с соусом или гарниром по вкусу.",
+    img: "/dishes/second5.jpg",
+    price: 18,
+    category:"second_dishes",
+  },
+  {
+    id: 26,
+    title: "Азиатский салат",
+    desc: "Азиатский салат с говядиной - это вкусное и сытное блюдо, которое сочетает в себе свежие овощи, такие как морковь, огурцы и перец, с нежным мясом говядины. Салат заправляется соевым соусом,",
+    img: "/dishes/second6.jpg",
+    price: 18,
+    category: "second_dishes",
+  },
+  {
+    id: 27,
+    title: "Пельмени",
+    desc: "Пельмени - это блюдо, которое состоит из теста с начинкой из мяса",
+    img: "/dishes/second7.jpg",
+    price: 18,
+    category: "second_dishes",
+  },
+  {
+    id: 28,
+    title: "Картошка с колбасой",
+    desc: "Жареная картошка с колбасой - это блюдо, приготовленное из картофеля, который обжаривается до хрустящей золотистой корочки, а затем смешивается с нарезанной колбасой. ",
+    img: "/dishes/second8.jpg",
+    price: 16,
+    category: "second_dishes",
+  },
+ 
 ];
 
 export const singleProduct: Product = {
   id: 1,
-  title: "Sicilian",
-  desc: "Ignite your taste buds with a fiery combination of spicy pepperoni, jalapeños, crushed red pepper flakes, and melted mozzarella cheese, delivering a kick with every bite.",
-  img: "/temporary/p1.png",
-  price: 24.9,
-  options: [
-    {
-      title: "Small",
-      additionalPrice: 0,
-    },
-    {
-      title: "Medium",
-      additionalPrice: 4,
-    },
-    {
-      title: "Large",
-      additionalPrice: 6,
-    },
-  ],
+  title: "",
+  desc: "",
+  img: "",
+  price: 0,
+  category: "",
 };
 
 
 type Menu = {
-    id: number;
-    slug: string;
-    title: string;
-    desc?: string;
-    img: string;
-    
-  }[];
-  
-  export const menu: Menu = [
-    {
-      id: 1,
-      slug: "first_dishes",
-      title: "первые",
-      desc: " Первые блюда: многообразие вкусов и текстур.",
-      img: "/main_first.jpg",
-      
-    },
-    {
-      id: 2,
-      slug: "second_dishes",
-      title: "вторые",
-      desc: "Вторые блюда: от классических до экзотических.",
-      img: "/main_second.jpg",
-      
-    },
-    {
-        id: 3,
-        slug: "drinks",
-        title: "напитки",
-        desc: "Напитки: утолить жажду и насладиться вкусом.",
-        img: "/main_drinks.jpg",
-      
-    },
-    {
-      id: 4,
-      slug: "desserts",
-      title: "десерты",
-      desc: "Десерты: сладкое завершения вашейтрапезы.",
-      img: "/main_dessert.jpg",
-      
-    },
-  ];
+  id: number;
+  slug: string;
+  title: string;
+  desc?: string;
+  img: string;
 
-  
+}[];
+
+export const menu: Menu = [
+  {
+    id: 1,
+    slug: "first_dishes",
+    title: "первые",
+    desc: " Первые блюда: многообразие вкусов и текстур.",
+    img: "/main_first.jpg",
+
+  },
+  {
+    id: 2,
+    slug: "second_dishes",
+    title: "вторые",
+    desc: "Вторые блюда: от классических до экзотических.",
+    img: "/main_second.jpg",
+
+  },
+  {
+    id: 3,
+    slug: "drinks",
+    title: "напитки",
+    desc: "Напитки: утолить жажду и насладиться вкусом.",
+    img: "/main_drinks.jpg",
+
+  },
+  {
+    id: 4,
+    slug: "desserts",
+    title: "десерты",
+    desc: "Десерты: сладкое завершения вашейтрапезы.",
+    img: "/main_dessert.jpg",
+
+  },
+];
+

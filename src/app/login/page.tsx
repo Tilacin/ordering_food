@@ -9,9 +9,9 @@ const LoginPage = () => {
       <div className="relative flex items-center justify-center bg-transparent h-[70%] w-[90%] sm:h-[70%] sm:w-[70%] md:h-[70%] md:w-[60%] lg:w-[60%] 2xl:w-1/2 border-solid border-4 border-gray-500 rounded-xl duration-500 ease-in-out hover:shadow-2xl hover:border-red-600 hover:ring-inset hover:backdrop-sepia-[65]"
       
       >
-      <form >
+      <form className="">
         <h2 className="text-2xl text-center text-[#fff] duration-500 ease-in-out">Авторизация</h2>
-        <div className="relative w-80 my-8">
+        <div className="relative w-80 my-8 max-sm:w-[80%]  ">
           <span className="absolute left-2 text-sm leading-10 duration-500 ease-in-out">
             🧓
           </span>
