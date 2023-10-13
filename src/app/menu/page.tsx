@@ -1,12 +1,41 @@
-import Menu from '@/components/Menu'
-import React from 'react'
+import { menu } from "@/data";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+
+//Меню с категориями
 
 function MenuPage() {
+ 
+ 
   return (
-    <div>Меню
-      <Menu/>
+    <div className=" p-2 lg:px-20 xl:px-20    flex   flex-wrap   bg-gray-800   items-center justify-center">
+      {menu.map((category) => (
+        
+        <Link href={`/menu/${category.slug}`} key={category.id} 
+        >
+          <div className="flex flex-col m-1 bg-gray-500 hover:bg-gray-400 hover:border-4  items-center justify-center border-2 rounded-lg  w-[35rem] max-sm:w-full">
+            <h1 className="uppercase font-bold text-2xl text-yellow-500 m-1 p-2">
+              {category.title}
+            </h1>
+            <p className="flex  text-lg text-yellow-500 font-bold items-center justify-center mx-2 ">
+              {category.desc}
+            </p>
+            <div className="overflow-hidden rounded-lg">
+              <Image
+                className=" hover:scale-110 transition duration-500 cursor-pointer object-cover p-2 "
+                src={category.img}
+                width={450}
+                height={1250}
+                alt="cart"
+              />
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
-  )
+  );
 }
 
-export default MenuPage
+export default MenuPage;
+
