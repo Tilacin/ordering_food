@@ -1,23 +1,30 @@
-"use client";
-
-import React, { useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import ReactCalendar from "react-calendar";
 import { add, format } from "date-fns";
 
 import "react-calendar/dist/Calendar.css";
-import { INTERVAL, STORE_CLOSING_TIME, STORE_OPENING_TIME } from "@/constants/config";
+import {
+  INTERVAL,
+  STORE_CLOSING_TIME,
+  STORE_OPENING_TIME,
+} from "@/constants/config";
+import { DateTime } from "@/utils/types";
+
+interface indexProps {
+  date: DateTime;
+  setDate: Dispatch<SetStateAction<DateTime>>;
+}
 
 interface DateType {
   justDate: Date | null;
   dateTime: Date | null;
 }
 
-function Calendar() {
-  const [date, setDate] = useState<DateType>({
-    justDate: null,
-    dateTime: null,
-  });
+const index: FC<indexProps> = ({ setDate, date }) => 
 
+
+{
+  
   const getTimes = () => {
     if (!date.justDate) return;
 
@@ -45,22 +52,30 @@ function Calendar() {
                 type="button"
                 onClick={() => setDate((prev) => ({ ...prev, dateTime: time }))}
               >
-                {format(time, 'kk:mm')}
+                {format(time, "kk:mm")}
               </button>
             </div>
           ))}
         </div>
       ) : (
+        
         <ReactCalendar
           minDate={new Date()}
           view="month"
+          locale="ru-RU"
           onClickDay={(date) =>
             setDate((prev) => ({ ...prev, justDate: date }))
+           
           }
+          
         />
-      )}
-    </div>
-  );
-}
 
-export default Calendar;
+
+      )}
+      
+    </div>
+    
+  );
+};
+
+export default index;

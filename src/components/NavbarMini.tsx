@@ -8,7 +8,7 @@ import Link from "next/link";
 const links = [
   { id: 1, title: "Главная", url: "/" },
   { id: 2, title: "Меню", url: "/menu" },
-  
+  { id: 3, title: "Забронировать", url: "/booking" },
   { id: 4, title: "Корзина", url: "/cart" },
 ];
 
