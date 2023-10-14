@@ -1,12 +1,12 @@
-import React from 'react'
-import MenuBlack from '@/components/MenuBlack'
+import React from "react";
+import MenuBlack from "@/components/Navbar";
 
 function page() {
   return (
     <div>
-        <MenuBlack/>
+      <MenuBlack />
     </div>
-  )
+  );
 }
 
-export default page
+export default page;
