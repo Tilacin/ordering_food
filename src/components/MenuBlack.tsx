@@ -7,7 +7,7 @@ function MenuBlack() {
   const user = false;
   //justify-betweenmin-h-screen 
   return (
-    <div className="h-12 flex p-4  items-center bg-black  border-b-2 border-b-yellow-500 md:h-16 xl:px-20 lg:px-20
+    <div className="h-12 flex p-4  items-center bg-black  border-b-2  border-b-yellow-500 md:h-16 xl:px-20 lg:px-20
     " >
       <div className="hidden md:flex gap-4 flex-1">
         <Link href="/" className="relative text-xl text-gray-500 font-bold no-underline px-3 py-2 transition hover:text-yellow-300 font-serif	" >Главная
