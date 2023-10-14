@@ -11,7 +11,7 @@ const LoginPage = () => {
       >
       <form className="">
         <h2 className="text-2xl text-center text-[#fff] duration-500 ease-in-out">Авторизация</h2>
-        <div className="relative w-80 my-8 max-sm:w-[80%]  ">
+        <div className="my-8 max-sm:w-[80%]  w-full">
           <span className="absolute left-2 text-sm leading-10 duration-500 ease-in-out">
             🧓
           </span>
