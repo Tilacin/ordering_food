@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div>Sign up</div>
+    <div className='bg-blue-200 '>Sign up</div>
   )
 }
 
