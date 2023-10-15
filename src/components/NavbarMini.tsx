@@ -36,7 +36,7 @@ function Menu() {
           ))}
 
           <Link className="relative text-2xl text-gray-400 font-bold no-underline px-3 py-2 transition hover:text-yellow-300 font-serif	"
-            href={user ? "/orders" : "/login"}
+            href={user ? "/orders" : "/sign-in"}
             onClick={() => setOpen(false)}
           >
             {user ? "Orders" : "Авторизация"}
