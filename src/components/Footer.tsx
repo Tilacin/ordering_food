@@ -9,7 +9,7 @@ function Footer() {
       
       </Link>
       <Link href="https://github.com/Tilacin">
-      <Image  src="/tilacin.svg"  width={120} height={120} alt="cart"  />
+      <Image  src="/tilacin.png"  width={120} height={120} alt="cart" className='w-auto' />
       </Link>
      
     </div>
