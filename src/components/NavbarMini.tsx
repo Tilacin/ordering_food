@@ -39,7 +39,7 @@ function Menu() {
             href={user ? "/orders" : "/sign-in"}
             onClick={() => setOpen(false)}
           >
-            {user ? "Orders" : "Авторизация"}
+            {user ? "Orders" : "Вход"}
             <span className="absolute z-0 left-0 top-0 w-full h-full border-solid border-b-2 border-yellow-300 rounded-2xl translate-y-2 opacity-0 transition hover:scale-100 hover:translate-y-0 hover:opacity-100"></span>
           </Link>
           <Link className="relative text-2xl text-gray-400 font-bold no-underline px-3 py-2 transition hover:text-yellow-300 font-serif	"

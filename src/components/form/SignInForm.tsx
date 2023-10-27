@@ -15,6 +15,9 @@ import { Button } from "../ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import GoogleSignInButton from "../GoogleSignInButton";
+import {signIn} from "next-auth/react"
+import { useRouter } from "next/navigation";
+
 
 const FormSchema = z.object({
   email: z
@@ -27,7 +30,9 @@ const FormSchema = z.object({
     .min(8, "Пароль должен содержать более 8 символов"),
 });
 
+
 const SignInForm = () => {
+  const router = useRouter()
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -35,8 +40,20 @@ const SignInForm = () => {
       password: "",
     },
   });
-  const onSubmit = (values: z.infer<typeof FormSchema>) => {
-    console.log(values);
+  const onSubmit = async(values: z.infer<typeof FormSchema>) => {
+    
+    const signInData = await signIn('credentials', {
+    email: values.email,
+    password: values.password,
+    redirect: false,
+   })
+   if(signInData?.error){
+    console.log(signInData.error);
+    
+   }else{
+    router.push('/admin')
+   }
+   
   };
 
   return (
@@ -92,3 +109,5 @@ const SignInForm = () => {
 };
 
 export default SignInForm;
+
+//39:50

@@ -10,9 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
-
 model Category {
   id        String    @id @default(cuid())
   createdAt DateTime  @default(now())
@@ -44,7 +41,26 @@ model Order {
   products  Json[]
   status    String
   intent_id String?  @unique
- 
 }
 
-//23:30
+model User {
+  id       Int     @id @default(autoincrement())
+  email    String @unique
+  username String  @unique
+ password String
+ createdAt DateTime @default(now())
+ updateUt DateTime @updatedAt
+}
+ 
+ model Day {
+  id        String @id @default(cuid())
+  name      String // понедельник, вторник, ...
+  dayOfWeek Int // @смотрите документацию по getDay(), 0 для воскресенья, 1 для понедельника, ...
+  openTime  String
+  closeTime String
+}
+
+model ClosedDay {
+  id   String   @id @default(cuid())
+  date DateTime @unique
+}

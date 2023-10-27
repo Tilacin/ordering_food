@@ -11,8 +11,8 @@ export const GET = async (req: NextRequest) => {
     try {
         const products = await prisma.product.findMany({
             where: {
-                ...(cat ? { catSlug: cat } : { isFeatured: true }),
-            },
+                ...(cat ? { catSlug: cat } : null),
+              },
         })
         return new NextResponse(
             JSON.stringify(products),
@@ -28,3 +28,5 @@ export const GET = async (req: NextRequest) => {
 export const POST = () => {
     return new NextResponse("hello", { status: 200 })
 }
+
+//41:38

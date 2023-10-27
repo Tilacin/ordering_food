@@ -287,7 +287,7 @@ export const menu: Menu = [
     id: 4,
     slug: "desserts",
     title: "десерты",
-    desc: "Десерты: сладкое завершения вашейтрапезы.",
+    desc: "Десерты: сладкое завершения вашей трапезы.",
     img: "/main_dessert.jpg",
 
   },
