@@ -15,7 +15,7 @@ export default function Home() {
     <Image src="/main_food.png"
             alt=""
             width={800}
-            height={450}
+            height={964}
             className="object-contain"
             />
     </div>

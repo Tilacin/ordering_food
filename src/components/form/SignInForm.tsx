@@ -32,7 +32,10 @@ const FormSchema = z.object({
 
 
 const SignInForm = () => {
+  
   const router = useRouter()
+
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -49,13 +52,13 @@ const SignInForm = () => {
    })
    if(signInData?.error){
     console.log(signInData.error);
-    
-   }else{
-    router.push('/admin')
+   
+   }else {
+    router.push('/')
    }
    
   };
-
+  
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>

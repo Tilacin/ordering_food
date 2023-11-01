@@ -11,20 +11,22 @@ const links = [
   { id: 3, title: "Забронировать", url: "/booking" },
   { id: 4, title: "Корзина", url: "/cart" },
 ];
-function Menu() {
+function NavbarMini() {
   const [open, setOpen] = useState(false);
 
   const user = false;
   return (
-    <div className="p-4 bg-gradient-to-r">
+    <div className=" p-4 bg-gradient-to-r  ">
+      <div className="absolute z-20 ">
       <Image
         src={open ? "/close.png" : "/open.png"}
         alt=""
-        width={20}
-        height={20}
+        width={22}
+        height={22}
         onClick={() => setOpen(!open)}
         className="cursor-pointer"
       />
+      </div>
       {open && (
         
         <div className="absolute left-0 top-2 w-full h-[calc(100vh-6rem)] flex flex-col gap-8 items-center justify-center  z-10 bg-black">
@@ -53,4 +55,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default NavbarMini;
