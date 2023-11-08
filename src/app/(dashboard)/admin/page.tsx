@@ -6,7 +6,7 @@ const page = async () => {
   if (session?.user) {
     return (
       <h2 className="text-2xl">
-        Админка - с возвращением {session?.user.username}
+        Админка - с возвращением {session?.user.name}
       </h2>
     );
   }

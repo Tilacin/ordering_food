@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
+//КНОПКА УДАЛЕНИЯ на странице самого продукта (появляется если юзер админ)
+
 const DeleteButton = ({ id }: { id: string }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -12,7 +14,7 @@ const DeleteButton = ({ id }: { id: string }) => {
   if (status === "loading") {
     return <p>Загрузка...</p>;
   }
-
+//если не выполнен вход или не адми, кнопку не показываем
   if (status === "unauthenticated" || !session?.user.isAdmin) {
     return;
   }

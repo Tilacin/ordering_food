@@ -21,13 +21,13 @@ export const GET = async (req: NextRequest) => {
     } catch (err) {
       console.log(err);
       return new NextResponse(
-        JSON.stringify({ message: "Something went wrong!" }),
+        JSON.stringify({ message: "Что-то пошло не так!" }),
         { status: 500 }
       );
     }
   } else {
     return new NextResponse(
-      JSON.stringify({ message: "You are not authenticated!" }),
+      JSON.stringify({ message: "Вы не прошли проверку подлинности!" }),
       { status: 401 }
     );
   }
@@ -47,13 +47,13 @@ export const POST = async (req: NextRequest) => {
     } catch (err) {
       console.log(err);
       return new NextResponse(
-        JSON.stringify({ message: "Something went wrong!" }),
+        JSON.stringify({ message: "Что-то пошло не так!"}),
         { status: 500 }
       );
     }
   } else {
     return new NextResponse(
-      JSON.stringify({ message: "You are not authenticated!" }),
+      JSON.stringify({ message: "Вы не прошли проверку подлинности!" }),
       { status: 401 }
     );
   }

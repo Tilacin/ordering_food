@@ -2,6 +2,7 @@ import prisma from "@/utils/connect";
 import { getAuthSession } from "@/utils/auth";
 
 import { NextRequest, NextResponse } from "next/server";
+      //ИДЕНТИФИКАТОР ПРОДУКТА
 
 // получаем продукт 
 
@@ -35,7 +36,7 @@ export const DELETE = async (
 ) => {
   const { id } = params;
   const session = await getAuthSession();
-
+//если админ, можем удалить продукт (на странице самого блюда)
   if (session?.user.isAdmin) {
     try {
       await prisma.product.delete({
@@ -47,6 +48,7 @@ export const DELETE = async (
       return new NextResponse(JSON.stringify("Продукт был удален!"), {
         status: 200,
       });
+      
     } catch (err) {
       console.log(err);
       return new NextResponse(
@@ -54,7 +56,7 @@ export const DELETE = async (
         { status: 500 }
       );
     }
-  }
+  }//если не админ
   return new NextResponse(JSON.stringify({ message: "Вам это запрещено!" }), {
     status: 403,
   });

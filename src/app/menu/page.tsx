@@ -8,22 +8,20 @@ const getData = async () => {
   const res = await fetch("http://localhost:3000/api/categories", {
     cache: "no-store",
   });
-  if(!res.ok){
-    throw new Error("Ошибка!")
+  if (!res.ok) {
+    throw new Error("Ошибка!");
   }
-  return res.json()
+  return res.json();
 };
 
 //Меню с категориями
 
 const MenuPage = async () => {
-
-  const menu:MenuType = await getData()
+  const menu: MenuType = await getData();
   return (
     <div
       className=" p-2 lg:px-20 xl:px-20    flex   flex-wrap   
-    bg-gradient-to-r from-black 
-     items-center justify-center "
+      bg-[url('/1.1.png')] items-center justify-center "
     >
       {menu.map((category) => (
         <Link href={`/menu/${category.slug}`} key={category.id}>

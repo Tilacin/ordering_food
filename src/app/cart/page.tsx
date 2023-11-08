@@ -89,7 +89,7 @@ const CartPage = () => {
           <span className="font-bold">${totalPrice}</span>
         </div>
         <button
-          className="flex justify-center bg-red-500 text-white p-3 rounded-md w-1/2 self-end"
+          className="flex justify-center mx-auto  bg-red-500 text-white p-3 rounded-md w-1/2 self-end"
           onClick={handleCheckout}
         >
           ОПЛАТИТЬ

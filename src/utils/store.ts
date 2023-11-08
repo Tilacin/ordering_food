@@ -16,12 +16,14 @@ export const useCartStore = create(
       totalPrice: INITIAL_STATE.totalPrice,
       addToCart(item) {
         const products = get().products;
+        //проверяем есть ли такой продукт в корзине
         const productInState = products.find(
           (product) => product.id === item.id
         );
 
 
-
+//если продукт есть и добавляем такой же, обнавляем продукт(updatedProducts) и
+// меняем кол-во и сумму
         if (productInState) {
           const updatedProducts = products.map((product) =>
             product.id === productInState.id
