@@ -41,9 +41,9 @@ const { addToCart } = useCartStore();
      
       
       {/* КОЛИЧЕСТВО И КНОПКА ДОБАВЛЕНИЯ */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center max-sm:flex-col gap-2">
         {/* Количество */}
-        <div className="flex justify-between  w-full p-3 ring-1 ring-red-500">
+        <div className="flex justify-between  w-full p-3 ring-1 ring-amber-500 rounded-xl ">
           <span className="px-2">Количество</span>
           <div className="flex gap-4 items-center">
             <button
@@ -61,7 +61,7 @@ const { addToCart } = useCartStore();
         </div>
         {/* КНОПКА "КОРЗИНА" */}
         <button
-          className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500"
+          className="uppercase w-56 bg-orange-500 text-white p-3 ring-1 ring-amber-500 rounded-xl max-sm:w-full "
           onClick={handleCart}
         >
          Добавить

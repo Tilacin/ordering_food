@@ -15,9 +15,9 @@ import { Button } from "../ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import GoogleSignInButton from "../GoogleSignInButton";
-import {signIn} from "next-auth/react"
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
+import YandexSignInButton from "../YandexSignInButton ";
 
 const FormSchema = z.object({
   email: z
@@ -30,11 +30,8 @@ const FormSchema = z.object({
     .min(8, "Пароль должен содержать более 8 символов"),
 });
 
-
 const SignInForm = () => {
-  
-  const router = useRouter()
-
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -43,22 +40,19 @@ const SignInForm = () => {
       password: "",
     },
   });
-  const onSubmit = async(values: z.infer<typeof FormSchema>) => {
-    
-    const signInData = await signIn('credentials', {
-    email: values.email,
-    password: values.password,
-    redirect: false,
-   })
-   if(signInData?.error){
-    console.log(signInData.error);
-   
-   }else {
-    router.push('/')
-   }
-   
+  const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+    const signInData = await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      redirect: false,
+    });
+    if (signInData?.error) {
+      console.log(signInData.error);
+    } else {
+      router.push("/");
+    }
   };
-  
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -84,7 +78,7 @@ const SignInForm = () => {
               <FormItem>
                 <FormLabel>Пароль</FormLabel>
                 <FormControl>
-                  <Input placeholder="password" type="password"{...field} />
+                  <Input placeholder="password" type="password" {...field} />
                 </FormControl>
 
                 <FormMessage />
@@ -100,9 +94,32 @@ const SignInForm = () => {
       <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
         или
       </div>
-      <GoogleSignInButton>Войдите с помощью аккаунта Google</GoogleSignInButton>
+      <YandexSignInButton>
+        <picture>
+          <img
+            className="pr-2"
+            src="/yandex.png"
+            alt=""
+            style={{ height: "1.5rem" }}
+          />
+        </picture>
+        <p> Войдите с помощью аккаунта Yandex</p>
+      </YandexSignInButton>
+      <GoogleSignInButton>
+       
+          <picture>
+            <img
+              className="pr-2"
+              src="/googleIcon.png"
+              alt=""
+              style={{ height: "1rem" }}
+            />
+          </picture>
+          <p>Войдите с помощью аккаунта Google</p>
+        
+      </GoogleSignInButton>
       <p className="text-center text-sm text-gray-600 mt-2">
-      Если у вас нет учетной записи, пожалуйста&nbsp;
+        Если у вас нет учетной записи, пожалуйста&nbsp;
         <Link className="text-blue-500 hover:underline" href="/sign-up">
           Зарегистрируйтесь
         </Link>

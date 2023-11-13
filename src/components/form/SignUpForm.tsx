@@ -138,7 +138,16 @@ const SignUpForm = () => {
       <div className="mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400">
         или
       </div>
-      <GoogleSignInButton >Зарегистрируйтесь в Google</GoogleSignInButton>
+      <GoogleSignInButton >
+      <picture >
+       <img
+          className="pr-2 "
+          src="/googleIcon.png"
+          alt=""
+          style={{ height: "1rem" }}
+        />
+     </picture>
+        Зарегистрируйтесь в Google</GoogleSignInButton>
       <p className="text-center text-sm text-gray-600 mt-2">
         Если у вас есть учётная запись, пожалуйста&nbsp;
         <Link className="text-blue-500 hover:underline" href="/sign-in">

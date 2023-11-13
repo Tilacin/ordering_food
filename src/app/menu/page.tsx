@@ -20,7 +20,7 @@ const MenuPage = async () => {
   const menu: MenuType = await getData();
   return (
     <div
-      className=" p-2 lg:px-20 xl:px-20    flex   flex-wrap   
+      className=" p-2 lg:px-20 xl:px-20 flex flex-wrap   
       bg-[url('/1.1.png')] items-center justify-center "
     >
       {menu.map((category) => (
