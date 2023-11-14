@@ -1,48 +1,50 @@
 "use client";
 
+import { ProductType } from "@/types/types";
+import { useCartStore } from "@/utils/store";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
-type Props = {
-  price: number;
-  id: number;
-  options?: { title: string; additionalPrice: number }[];
-};
-
-const Price = ({ price, id, options }: Props) => {
-  const [total, setTotal] = useState(price);
+const Price = ({ product }: { product: ProductType }) => {
+  const [total, setTotal] = useState(product.price);
   const [quantity, setQuantity] = useState(1);
-  const [selected, setSelected] = useState(0);
+  
+const { addToCart } = useCartStore();
+
+  useEffect(()=>{
+    useCartStore.persist.rehydrate()
+  },[])
 
   useEffect(() => {
-    setTotal(
-      quantity * (options ? price + options[selected].additionalPrice : price)
-    );
-  }, [quantity, selected, options, price]);
+    
+      setTotal(
+        quantity * product.price 
+      );
+    
+  }, [quantity, product.price]);
+
+  const handleCart = ()=>{
+    addToCart({
+      id: product.id,
+      title: product.title,
+      img: product.img,
+      price: total,
+     
+      quantity: quantity,
+    })
+    toast.success("Товар добавлен в корзину!")
+  }
 
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-2xl font-bold">${total.toFixed(2)}</h2>
-      {/* OPTIONS CONTAINER */}
-      <div className="flex gap-4">
-        {options?.map((option, index) => (
-          <button
-            key={option.title}
-            className="min-w-[6rem] p-2 ring-1 ring-red-400 rounded-md"
-            style={{
-              background: selected === index ? "rgb(248 113 113)" : "white",
-              color: selected === index ? "white" : "red",
-            }}
-            onClick={() => setSelected(index)}
-          >
-            {option.title}
-          </button>
-        ))}
-      </div>
-      {/* QUANTITY AND ADD BUTTON CONTAINER */}
-      <div className="flex justify-between items-center">
-        {/* QUANTITY */}
-        <div className="flex justify-between w-full p-3 ring-1 ring-red-500">
-          <span>Quantity</span>
+      <h2 className="text-2xl font-bold">${total}</h2>
+     
+      
+      {/* КОЛИЧЕСТВО И КНОПКА ДОБАВЛЕНИЯ */}
+      <div className="flex justify-between items-center max-sm:flex-col gap-2">
+        {/* Количество */}
+        <div className="flex justify-between  w-full p-3 ring-1 ring-amber-500 rounded-xl ">
+          <span className="px-2">Количество</span>
           <div className="flex gap-4 items-center">
             <button
               onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
@@ -57,9 +59,12 @@ const Price = ({ price, id, options }: Props) => {
             </button>
           </div>
         </div>
-        {/* CART BUTTON */}
-        <button className="uppercase w-56 bg-red-500 text-white p-3 ring-1 ring-red-500">
-          Add to Cart
+        {/* КНОПКА "КОРЗИНА" */}
+        <button
+          className="uppercase w-56 bg-orange-500 text-white p-3 ring-1 ring-amber-500 rounded-xl max-sm:w-full "
+          onClick={handleCart}
+        >
+         Добавить
         </button>
       </div>
     </div>
