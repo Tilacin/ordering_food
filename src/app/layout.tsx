@@ -26,9 +26,9 @@ export default function RootLayout({
         <AuthProvider>
           <QueryProvider>
             <div>
-              <MenuBlack />
+            <MenuBlack />
               {children}
-              <Footer />
+             
               <ToastContainer position="bottom-right" autoClose={3000} />
             </div>
           </QueryProvider>

@@ -10,7 +10,7 @@ export default function Home() {
      <h2 className="font-bold text-xl m-5 "> “Выбирайте CulinArt, и ваши любимые блюда окажутся у вас дома быстрее, чем вы думаете!”</h2>
     <div className="">
       <div>
-        <Link className={buttonVariants()} href="/admin">Перейти в админку</Link>
+        <Link className={buttonVariants()} href="/dashboard">Перейти в админку</Link>
       </div>
     <Image src="/main_food.png"
             alt=""

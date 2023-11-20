@@ -1,9 +1,0 @@
--- DropIndex
-DROP INDEX "User_name_key";
-
--- AlterTable
-ALTER TABLE "User" ADD COLUMN     "createdAt" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
-ADD COLUMN     "updateAt" TIMESTAMP(3),
-ALTER COLUMN "email" DROP NOT NULL,
-ALTER COLUMN "name" DROP NOT NULL,
-ALTER COLUMN "password" DROP NOT NULL;
